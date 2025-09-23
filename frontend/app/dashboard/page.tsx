@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { faqAPI, healthAPI, type FAQ, type AskResponse } from '../../lib/api';
+import { faqAPI, healthAPI, type FAQ, type AskResponse } from './lib/api';
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -11,7 +11,7 @@ export default function DashboardPage() {
   const [error, setError] = useState('');
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingFaq, setEditingFaq] = useState<FAQ | null>(null);
-  const [healthStatus, setHealthStatus] = useState<any>(null);
+  const [healthStatus, setHealthStatus] = useState<any>(null);  // eslint-disable-line @typescript-eslint/no-explicit-any
   
   // Ask functionality
   const [askQuery, setAskQuery] = useState('');
